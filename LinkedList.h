@@ -10,7 +10,6 @@
 #include "LinkedListMember.h"
 
 #endif
-#include <iostream>
 using namespace std;
 class LinkedList {
     LinkedListMember* first;
@@ -39,13 +38,10 @@ void LinkedList::append(int newLastData){
 LinkedList::~LinkedList() {
     first = first->getNext();
     while (first!=last){
-        cout<<"delete: "<< first->getData()<<endl;
         delete first->getPrev();
         first = first->getNext();
     }
-    cout<<"delete: "<<last->getPrev()->getData()<<endl;
     delete last->getPrev();
-    cout<<"delete: "<<last->getData()<<endl;
     delete last;
 }
 LinkedList::LinkedList() {
