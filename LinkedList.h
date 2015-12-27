@@ -1,6 +1,6 @@
 //
 // Created by jeremy on 12/25/15.
-//  Only for positive numbers as we'll consider -1 an error value return. what are exceptions?
+//  Linked List of Integers. Very basic.
 
 #ifndef LISTS_LINKEDLIST_H
 #define LISTS_LINKEDLIST_H
@@ -23,7 +23,9 @@ public:
     LinkedList();
 };
 
-
+/*
+ * Adds an item to the end of the list. The only way to add to the list.
+ */
 void LinkedList::append(int newLastData){
     LinkedListMember* prevLastMember = last;
     LinkedListMember* newLastMember = new LinkedListMember(newLastData, prevLastMember, nullptr);

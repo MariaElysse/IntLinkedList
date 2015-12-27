@@ -17,6 +17,14 @@ int main() {
         cout<<"current: "<<current->getData()<<endl;
         current = current->getNext();
     }
+    cout<<"delete: "<<ll->getFirst()->getNext()->getData()<<endl;
+    delete(ll->getFirst()->getNext());
+    current = ll->getFirst();
+    while(current!=nullptr){
+        cout<<"current: "<<current->getData()<<endl;
+        current = current->getNext();
+    }
+
     delete(ll);
     return 0;
 }

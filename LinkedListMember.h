@@ -28,12 +28,20 @@ LinkedListMember::LinkedListMember(int data, LinkedListMember* prev, LinkedListM
     this->next = next;
     this->prev = prev;
 }
+/*
+ * The Destructor automatically re-connects the list.
+ * So, to delete an element from the list, one simply calls the destructor.
+ */
 LinkedListMember::~LinkedListMember() {
     if (next==nullptr && prev!= nullptr ){
         prev->setNext(nullptr);
     }
     if (prev==nullptr && next!= nullptr){
         next->setPrev(nullptr);
+    }
+    if (prev!=nullptr && next!=nullptr){
+        prev->setNext(next);
+        next->setPrev(prev);
     }
 
 }
